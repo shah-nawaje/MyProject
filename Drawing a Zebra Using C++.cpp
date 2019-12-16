@@ -159,6 +159,6 @@ void zebra(){
           setcolor(6);
           outtext(" ");
           settextstyle(3,HORIZ_DIR,3);
-          outtextxy(350, 400, "Zebra");
+          outtextxy(350, 400, "Zebr");
 
 }
