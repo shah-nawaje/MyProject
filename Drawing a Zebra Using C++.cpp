@@ -6,8 +6,6 @@
 #include <dos.h>
 
 
-
-
 void get_Z();
 void zebra();
 
@@ -55,6 +53,7 @@ void get_Z(){
     zebra();
 
 }
+
 
 void zebra(){
    
