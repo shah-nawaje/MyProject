@@ -7,56 +7,28 @@
 
 
 
-void get_U();
-void get_V();
-void get_W();
-void get_X();
-void get_Y();
-void get_Z();
 
-void umbrella();
-void vollyball();
-void wheel();
-void xray();
-void yacht();
+void get_Z();
 void zebra();
 
 
-
-
-
 int main(){
-    int gdriver = DETECT, gmode;
-    initgraph(&gdriver, &gmode, "..\\bgi");
-    char ch;
-    setcolor(14);
-   settextstyle(2,HORIZ_DIR,6);
-  outtextxy(206, 0, ".....Welcome to Our project.....");
+  int gdriver = DETECT, gmode;
+  initgraph(&gdriver, &gmode, "..\\bgi");
+  char ch;
+  setcolor(14);
+  settextstyle(2,HORIZ_DIR,6);
+  outtextxy(206, 0, ".....Welcome to My project.....");
   settextstyle(2,HORIZ_DIR,4);
-  outtextxy(212, 20, "In this project we show U,V,W,X,Y,Z alphabet");
-  printf("\n\n\n  Enter a letter what you want to see: ");
+  outtextxy(212, 20, "In this project I am going to draw a Zebra.");
+  printf("\n\n\n  Enter z to see Zebra: ");
   scanf("%c",&ch);
 
-  if(ch=='U' || ch=='u'){
-         get_U();
-  }
-  else if(ch=='V' || ch=='v'){
-        get_V();
-  }
-  else if(ch=='W' || ch=='w'){
-        get_W();
-  }
-  else if(ch=='X' || ch=='x'){
-        get_X();
-  }
-  else if(ch=='Y' || ch=='y'){
-        get_Y();
-  }
-  else if(ch=='Z' || ch=='z'){
+  if(ch=='Z' || ch=='z'){
         get_Z();
   }
   else {
-    printf("\n\n....Please chose letter in U-V-W-X-Y-Z.Otherwise program has invalided....");
+    printf("\n\n....Please enter Z.");
   }
 
 
@@ -64,102 +36,7 @@ int main(){
     return 0;
 }
 
-void get_U(){
 
-  float r=70,h=300,k=135,y,x;
-   float a = r/(sqrt(2));
-    for( x=0; x<=a; x++){
-
-       y=sqrt(r*r - x*x);
-       putpixel(x+h,y+k,15);
-       putpixel(-x+h,y+k,15);
-
-       delay(20);
-    }
-    line(250,168+15,250,60+15);
-    line(350,168+15,350,60+15);
-    line(246,60+15,256,60+15);
-    line(346,60+15,356,60+15);
-    setcolor(14);
-    settextstyle(2,HORIZ_DIR,5);
-  outtextxy(270, 212, "Figure: U");
-  outtextxy(150, 235, "...U for Umbrella Now see the Umbrella...");
-  delay(1000);
-
-  umbrella();
-}
-
-void get_V(){
-
-     int x1 =250,y1=90,x2=300,y2=205;
-  int xx1=350,yy1=90;
-line(x1,y1,x2,y2);
-line(xx1,yy1,x2,y2);
-setcolor(14);
-settextstyle(2,HORIZ_DIR,5);
-  outtextxy(270, 212, "Figure: V");
-  outtextxy(150, 235, "...V for Volleyball Now see the Volleyball...");
-  delay(1000);
-
-  vollyball();
-}
-
-
-
-void get_W()
-{
-
-line(250,90,275,205);
-line(300,90,275,205);
-line(300,90,325,205);
-line(350,90,325,205);
-setcolor(14);
-settextstyle(2,HORIZ_DIR,5);
-outtextxy(270, 212, "Figure: W");
-outtextxy(150, 235, "Wheel for W and Below is the Wheel");
-delay(1000);
-
- wheel();
-
-
-}
-
-
-void get_X(){
-
-  setcolor(14);
-    line(198,50,290,158);
-    line(290,50,198,158);
-
-
-    settextstyle(2,HORIZ_DIR,5);
-
-    outtextxy(220, 180, "Figure: X");
-    settextstyle(2,HORIZ_DIR,5);
-    outtext(" ");
-    outtextxy(155, 210, "...X for X-ray Now see the X-ray...");
-    delay(1000);
-  xray();
-
-}
-
-
-void get_Y(){
-
-
-      int x1 =250,y1=75,x2=285,y2=145;
-      setcolor(15);
-   line(x1,y1,x2,y2);
-  line(320,y1,x2,y2);
-  line(x2,y2,x2,205);
-  setcolor(14);
-settextstyle(2,HORIZ_DIR,5);
-  outtextxy(256, 209, "Figure: Y");
-  outtextxy(165, 232, "...Y for Yacht Now see the Yacht...");
-delay(1000);
-  yacht();
-
-}
 
 void get_Z(){
 
@@ -179,152 +56,9 @@ void get_Z(){
 
 }
 
-
-void umbrella()
-{
-    pieslice(300, 320, 0, 180, 50);
-    line(50+200,99+220,150+200,99+220);
-    line(100+200,100+220,100+200,175+220);
-    arc(80+200, 175+220, 180, 360, 20);
-    setcolor(14);
-    outtextxy(230, 175+248, "Figure: Umbrella");
-
-}
-
-
-void vollyball()
-{
-
-     setcolor(14);
-   circle(300,360,80);
-   setfillstyle(8,3);
-   floodfill(300,360,14);
-
-   setcolor(13);
-   circle(300,360,53);
-   setfillstyle(6,14);
-   floodfill(300,360,13);
-
-   setcolor(12);
-   circle(300,360,19);
-   setfillstyle(1,3);
-   floodfill(305,360,12);
-   setcolor(14);
-   outtextxy(230, 455, "Figure: Volleyball");
-
-}
-
-
-void wheel()
-{
-
-     setcolor(4);
-   circle(300,350,85);
-   circle(300,350,65);
-   setfillstyle(2,5);
-   floodfill(380,350,4);
-   circle(300,350,40);
-   circle(300,350,20);
-   setfillstyle(3,6);
-   floodfill(335,350,4);
-   setfillstyle(5,5);
-   floodfill(301,350,4);
-   line(340,350,365,350);
-   line(260,350,235,350);
-   line(300,310,300,285);
-   line(300,390,300,415);
-
-   delay(300);
-   for(int i=0; i<=100; i++)
-   {
-       line(100+i,435,400+i,435);
-       line(100+i,437,400+i,437);
-        outtext(" ");
-   settextstyle(4,HORIZ_DIR,3);
-   outtextxy(250+i, 438, "Wheel");
-       delay(200);
-   }
-
-
-}
-
-void xray()
-{
-     setcolor(2);
-    rectangle(250,250,400,450); /* increasing x coordinate by 150 and y coordinate by 200*/
-    rectangle(270,270,380,430); /* decreasing x coordinate by 20 and y coordinate by 20 */
-    line(250,250,270,270);
-    line(400,250,380,270); /* Right up coordinate value of first rectangle is 400,250 */
-    line(250,450,270,430); /* left down coordinate value of first rectangle is 250,450 */
-    line(400,450,380,430);
-
-    /*straight lines */
-
-    line(280,270,280,430); /* y always starts from 270 and ends at 430 */
-    line(290,270,290,430);
-    line(300,270,300,430);
-    line(310,270,310,430);
-    line(320,270,320,430);       /* x starts from 280 and ends at 370 */
-    line(330,270,330,430);
-    line(340,270,340,430);
-    line(350,270,350,430);
-    line(360,270,360,430);
-    line(370,270,370,430);
-
-    setcolor(4);
-    settextstyle(5,HORIZ_DIR,4);
-    outtext(" ");
-    outtextxy(290, 350, "X-Ray");
-    delay(1000);
-
-
-}
-void yacht()
-{
-
-     int x1=250+50,y1=175+170;
-
-    arc(x1,y1,180,360,100);
-
-    int xx1=190+50,yy1=203+170,xx2=310+50;
-    line(xx1,yy1,xx2,yy1);
-    line(xx1,yy1,x1-100,y1);
-    line(xx2,yy1,x1+100,y1);
-    setcolor(14);
-    line(x1-100,y1,x1-50,y1+60);
-    line(x1+100,y1,xx2-10,y1+60);
-    line(x1-50,y1+60,xx2-10,y1+60);
-
-
-    setcolor(14);
-    rectangle(xx1+40,yy1-110,xx1+43,yy1);
-    floodfill(xx1+41,yy1-40,14);
-
-
-    setcolor(15);
-    circle(xx1+40,yy1-110,8);
-    floodfill(xx1+40,yy1-110,15);
-
-     setcolor(14);
-
-    line(xx1,yy1,xx1+40,yy1-110);
-
-
-    line(xx1+43,yy1-28,xx2-15,yy1-45);
-    line(xx1+43,yy1-110,xx2-15,yy1-45);
-
-
-    line(xx1+43,yy1-110,320,yy1-40);
-    line(xx1+43,yy1-110,300,yy1-34);
-
-    settextstyle(2,HORIZ_DIR,5);
-  outtextxy(255, 455, "Figure: Yacht");
-
-}
-
-void zebra()
-{
-   setcolor(6);
+void zebra(){
+   
+    setcolor(6);
     line(70,250,115,170);
     line(90,270,145,245);
     ellipse(92,242,-156,-90,23,30);
@@ -429,4 +163,3 @@ void zebra()
           outtextxy(350, 400, "Zebra");
 
 }
-
